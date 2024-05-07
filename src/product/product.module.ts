@@ -8,7 +8,12 @@ import { VariantModule } from 'src/variant/variant.module';
 import { StockModule } from 'src/stock/stock.module';
 
 @Module({
-  imports:[TypeOrmModule.forFeature([Product]),CategoryModule,VariantModule,StockModule],
+  imports: [
+    TypeOrmModule.forFeature([Product]),
+    CategoryModule,
+    VariantModule,
+    StockModule
+  ],
   controllers: [ProductController],
   providers: [ProductService]
 })

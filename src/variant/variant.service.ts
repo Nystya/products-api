@@ -49,7 +49,7 @@ export class VariantService {
               });
               return productVariantProperty;
           });
-            console.log(properties)
+            
           await this.productVariantPropertyRepository.save(properties);
 
           return savedVariant;

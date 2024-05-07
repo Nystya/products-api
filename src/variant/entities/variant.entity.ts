@@ -16,8 +16,7 @@ export class Variant{
     @OneToMany(()=> ProductVariantProperty , 
     (productVariantProperty)=>productVariantProperty.variant)
     properties:ProductVariantProperty[];
-
+    
     @OneToOne(() => Stock, stock => stock.variant, { cascade: true })
-    @JoinColumn()
     stock: Stock;
 }

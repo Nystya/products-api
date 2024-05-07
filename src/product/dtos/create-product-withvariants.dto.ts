@@ -1,7 +1,5 @@
-// create-product-with-variants.dto.ts
-import { IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
-import { CreateVariantDto } from 'src/variant/dtos/create-variant-dto';
+import { IsBoolean, IsNotEmpty, IsNumber, IsString, Min } from 'class-validator';
+
 
 export class CreateProductWithVariantsDto {
   @IsNotEmpty()
@@ -11,12 +9,14 @@ export class CreateProductWithVariantsDto {
   @IsString()
   description: string;
 
+  @IsBoolean()
+  isActive: boolean;
+
   @IsNotEmpty()
   @IsNumber()
   categoryId: number;
 
-  @IsNotEmpty()
- @ValidateNested()
-  @Type(() => CreateVariantDto)
-  variantWithStock: CreateVariantDto;
+  @IsNumber()
+  @Min(0)
+  stock: number
 }

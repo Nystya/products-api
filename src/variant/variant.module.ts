@@ -9,6 +9,6 @@ import { ProductVariantProperty } from './entities/product-variant-property.enti
   imports:[TypeOrmModule.forFeature([Variant]),TypeOrmModule.forFeature([ProductVariantProperty])],
   providers: [VariantService],
   controllers: [VariantController],
-  exports:[VariantModule]
+  exports:[VariantService]
 })
 export class VariantModule {}

@@ -28,7 +28,4 @@ export class StockService {
        return  await this.stockRepository.save(stock);
 
     }
-    
-
-
 }

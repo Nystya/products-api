@@ -12,7 +12,6 @@ import { Category } from './category/category.entity';
 import { Variant } from './variant/entities/variant.entity';
 import { ProductVariantProperty } from './variant/entities/product-variant-property.entity';
 import { Stock } from './stock/stock.entity';
-import { VariantService } from './variant/variant.service';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -21,7 +20,10 @@ import { VariantService } from './variant/variant.service';
     entities:[Product,Category,Variant,ProductVariantProperty,Stock],
     synchronize: true,
   })
-  ,ProductModule, VariantModule, StockModule, CategoryModule],
+  ,ProductModule,
+   VariantModule,
+   StockModule,
+   CategoryModule],
   controllers: [AppController],
   providers: [AppService, ControllerService],
 })
