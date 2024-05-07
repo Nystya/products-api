@@ -28,7 +28,9 @@ export class ProductController {
     async getAllProducts(@Param('id') id: string): Promise<any> {
         try {
             const product = await this.productsService.getAllInfo(parseInt(id,10));
-            return { success: true, data: product };
+            if(product!=null)
+                return { success: true, data: product };
+            else  return { success: false, data:product };
         } catch (error) {
             console.error('Error fetching product:', error);
             return { success: false, message: 'Failed to fetch product' };
