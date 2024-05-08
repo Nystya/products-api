@@ -39,6 +39,7 @@ export class CategoryService {
 
       return this.categoryRepository.save(existentCategory);
     } 
+    
     async delete(id:number){
       const categoryToBeDeleted= await  this.categoryRepository.findOneBy({
         id:id})

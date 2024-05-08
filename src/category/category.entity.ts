@@ -3,8 +3,10 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 
 @Entity()
 export class Category{
+
     @PrimaryGeneratedColumn()
     id: number;
+    
     @Column()
     category: string;
 

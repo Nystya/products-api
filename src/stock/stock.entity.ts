@@ -3,12 +3,16 @@ import { PrimaryGeneratedColumn,Column, OneToOne, JoinColumn, Entity } from "typ
 
 @Entity()
 export class Stock{
+
     @PrimaryGeneratedColumn()
     id: number;
+
     @Column()
     variantId: number;
+
     @Column()
     quantity: number;
+    
     @OneToOne(() => Variant)
     @JoinColumn({name:'variantId'})
     variant:Variant

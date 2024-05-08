@@ -5,7 +5,6 @@ import { ProductModule } from './product/product.module';
 import { VariantModule } from './variant/variant.module';
 import { StockModule } from './stock/stock.module';
 import { CategoryModule } from './category/category.module';
-import { ControllerService } from './controller/controller.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './product/product.entity';
 import { Category } from './category/category.entity';
@@ -25,6 +24,6 @@ import { Stock } from './stock/stock.entity';
    StockModule,
    CategoryModule],
   controllers: [AppController],
-  providers: [AppService, ControllerService],
+  providers: [AppService],
 })
 export class AppModule {}

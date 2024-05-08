@@ -5,11 +5,14 @@ export class CreateProductDto{
     @IsString()
     @IsNotEmpty()
     name: string;
+
     @IsString()
-    @IsNotEmpty()s
+    @IsNotEmpty()
     description: string;
+
     @IsBoolean()
     isActive: boolean;
+    
     @IsNotEmpty()
     @IsNumber()
     categoryId: number;

@@ -24,14 +24,12 @@ export class VariantController {
     }
 
     @Post('/variantsproducts') 
-  async createVariant(
-    @Body() createVariantDto: CreateVariantWithPropDto, 
-  ) {
-    try {
-      const createdVariant = await this.variantsService.createVariant(createVariantDto);
-      return createdVariant;
-    } catch (error) {
-      throw new NotFoundException(error.message);
+    async createVariant(@Body() createVariantDto: CreateVariantWithPropDto){
+      try {
+        const createdVariant = await this.variantsService.createVariant(createVariantDto);
+        return createdVariant;
+      } catch (error) {
+        throw new NotFoundException(error.message);
+      }
     }
-  }
 }

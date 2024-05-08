@@ -18,6 +18,7 @@ export class VariantService {
         const variant= this.variantRepository.create(createVariantDto)
         return await this.variantRepository.save(variant)
     }
+
     async findAll(): Promise<Variant[]> {
         return await this.variantRepository.find();
       }
@@ -29,6 +30,7 @@ export class VariantService {
             }
         });
     }
+
     async createVariant(createVariantDto: CreateVariantWithPropDto): Promise<Variant> {
       try {
           const product = await this.variantRepository.findOneBy({ productId: createVariantDto.productId });
@@ -53,9 +55,9 @@ export class VariantService {
           await this.productVariantPropertyRepository.save(properties);
 
           return savedVariant;
-      } catch (error) {
+        } catch (error) {
           throw new InternalServerErrorException('Failed to create variant.', error);
-      }
-  }
+        }
+    }
    
 }

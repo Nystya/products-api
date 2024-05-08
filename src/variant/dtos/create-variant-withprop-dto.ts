@@ -7,6 +7,7 @@ class PropertyDto {
   }
   
   export class CreateVariantWithPropDto {
+    
     @IsInt()
     productId: number;
   

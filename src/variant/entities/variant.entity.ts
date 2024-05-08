@@ -5,8 +5,10 @@ import { Stock } from "src/stock/stock.entity";
 
 @Entity()
 export class Variant{
+
     @PrimaryGeneratedColumn()
     id: number;
+    
     @Column()
     productId: number;
 
