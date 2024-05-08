@@ -7,12 +7,16 @@ export class Product{
 
     @PrimaryGeneratedColumn()
     id: number;
+
     @Column()
     name: string;
+
     @Column()
     description: string;
+
     @Column()
     isActive: boolean;
+    
     @Column()
     categoryId: number
 
